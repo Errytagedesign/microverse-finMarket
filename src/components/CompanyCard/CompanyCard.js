@@ -9,7 +9,7 @@ import { selectCompanies } from '../../redux/Company/CompanySlice';
 function CompanyCard() {
   // const dispatch = useDispatch();
   const { topGainers, isLoading, error } = useSelector(selectCompanies);
-  console.log(topGainers);
+  // console.log(topGainers);
 
   if (isLoading) {
     return <Spinner />;

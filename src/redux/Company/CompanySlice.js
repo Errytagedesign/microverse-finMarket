@@ -13,7 +13,6 @@ export const getCompanies = createAsyncThunk(
         `https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=${API_KEY}`,
       );
       const data = resp.json();
-      console.log(data);
       return data;
     }
 
