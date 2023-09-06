@@ -5,31 +5,24 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 // Fetch Mission
 export const getCompanies = createAsyncThunk(
   'company/getCompanies',
-  async () => {
-    const resp = await fetch(
-      `https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=${API_KEY}`,
-    );
-    const data = await resp.json();
-    console.log(data);
-    return data;
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
 
-    // const state = thunkAPI.getState();
+    if (state.companies.topGainers.length === 0) {
+      const resp = await fetch(
+        `https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=${API_KEY}`,
+      );
+      const data = resp.json();
+      console.log(data);
+      return data;
+    }
 
-    // if (state.mission.missionData.length === 0) {
-    //   const resp = await fetch(
-    //     `https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=${API_KEY}`,
-    //   );
-    //   const data = resp.json();
-    //   console.log(data);
-    //   return data;
-    // }
-
-    // return state.mission.missionData;
+    return state.companies.topGainers;
   },
 );
 
 const initialState = {
-  companies: [],
+  topGainers: [],
   filteredCompanies: [],
   companyDetail: [],
   statement: [],
@@ -51,7 +44,7 @@ const companiesSlice = createSlice({
       .addCase(getCompanies.fulfilled, (state, action) => ({
         ...state,
         isLoading: false,
-        companies: action.payload,
+        topGainers: action.payload,
       }))
       .addCase(getCompanies.rejected, (state, action) => ({
         ...state,

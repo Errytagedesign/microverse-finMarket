@@ -8,8 +8,8 @@ import { selectCompanies } from '../../redux/Company/CompanySlice';
 
 function CompanyCard() {
   // const dispatch = useDispatch();
-  const { companies, isLoading, error } = useSelector(selectCompanies);
-  console.log(companies);
+  const { topGainers, isLoading, error } = useSelector(selectCompanies);
+  console.log(topGainers);
 
   if (isLoading) {
     return <Spinner />;
@@ -27,7 +27,7 @@ function CompanyCard() {
 
   return (
     <main className="cardWrapper">
-      {companies.map(({ name, symbol, price }) => (
+      {topGainers.map(({ name, symbol, price }) => (
         <ul key={symbol} className="companyCard">
           <li className="">
             <Link
@@ -41,7 +41,7 @@ function CompanyCard() {
               </div>
               <div className="d-flex flex-column justify-content-between align-items-end col-12 text-end">
                 <h2>{name}</h2>
-                <div className="d-flex justify-content-between col-10 ">
+                <div className="d-flex justify-content-between col-12 col-md-10 ">
                   <span className="">
                     {' '}
                     Symbol:
