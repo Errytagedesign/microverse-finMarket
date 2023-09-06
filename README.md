@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+- [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -15,7 +16,6 @@
   - [Usage](#usage)
   - [Run Linters](#run-linters)
   - [Deployment](#deployment)
-- [Live Link](#live-link)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -50,6 +50,14 @@ A Book Store project developed with React, gitflow, and githubflow. In addition,
 
 - Initial setup with CRA.
 - Add Linters.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE LINK -->
+
+## Live Demo <a name="live-demo"></a>
+
+[Lve Demo Link](https://finmarket.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,14 +120,6 @@ I have added the linters or tests in order to avoid anykind of typos and ensure 
   <a href="https://docs.github.com/en/pages/quickstart">Useful link about Github Pages</a>
   <a href="https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/">Step by Step guide to deploy using netlify</a>
   <a href="https://www.programonaut.com/host-your-application-for-free-with-vercel-step-by-step/">Step by Step guide to deploy using vercel</a>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE LINK -->
-
-## Live Link <a name="live-link"></a>
-
-[LinkedIn](https://www.linkedin.com/in/errytagedesigns/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
