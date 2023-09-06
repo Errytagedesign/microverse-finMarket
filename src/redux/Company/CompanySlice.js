@@ -12,7 +12,7 @@ export const getCompanies = createAsyncThunk(
       const resp = await fetch(
         `https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=${API_KEY}`,
       );
-      const data = resp.json();
+      const data = await resp.json();
       return data;
     }
 
@@ -21,24 +21,22 @@ export const getCompanies = createAsyncThunk(
 );
 
 export const getCompanyDetails = createAsyncThunk(
-  'company/getCompanies',
+  'company/getCompanyDetails',
   async (symbol) => {
     const resp = await fetch(
       `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${API_KEY}`,
     );
-    console.log(resp);
-    const data = resp.json();
+    const data = await resp.json();
+    console.log(data);
     return data;
   },
 );
 
 const initialState = {
   topGainers: [],
-  filteredCompanies: [],
-  companyDetail: [],
-  statement: [],
+  companyDetail: {},
   isLoading: false,
-  error: '',
+  error: null,
 };
 
 const companiesSlice = createSlice({
@@ -47,36 +45,22 @@ const companiesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getCompanies.pending, (state) => ({
-        ...state,
-        isLoading: true,
-        error: null,
-      }))
-      .addCase(getCompanies.fulfilled, (state, action) => ({
-        ...state,
-        isLoading: false,
-        topGainers: action.payload,
-      }))
-      .addCase(getCompanies.rejected, (state, action) => ({
-        ...state,
-        isLoading: false,
-        error: action.error.message,
-      }))
-      .addCase(getCompanyDetails.pending, (state) => ({
-        ...state,
-        isLoading: true,
-        error: null,
-      }))
-      .addCase(getCompanyDetails.fulfilled, (state, action) => ({
-        ...state,
-        isLoading: false,
-        companyDetail: action.payload,
-      }))
-      .addCase(getCompanyDetails.rejected, (state, action) => ({
-        ...state,
-        isLoading: false,
-        error: action.error.message,
-      }));
+      .addCase(getCompanies.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(getCompanies.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.topGainers = action.payload;
+      })
+      .addCase(getCompanies.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+
+      .addCase(getCompanyDetails.fulfilled, (state, action) => {
+        state.companyDetail = action.payload;
+      });
   },
 });
 
