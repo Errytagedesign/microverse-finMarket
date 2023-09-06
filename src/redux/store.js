@@ -13,7 +13,7 @@ import {
 import CompanySlice from './Company/CompanySlice';
 
 const rootReducers = combineReducers({
-  mission: CompanySlice,
+  companies: CompanySlice,
 });
 
 const mainStores = configureStore({

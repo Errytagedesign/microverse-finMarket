@@ -1,79 +1,59 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 // Fetch Mission
-export const getMissions = createAsyncThunk(
-  'mission/getMission',
-  async (_, thunkAPI) => {
-    // Fetch the data only if it doesn't exist in the store
-    const state = thunkAPI.getState();
+export const getCompanies = createAsyncThunk(
+  'company/getCompanies',
+  async () => {
+    const resp = await fetch(
+      `https://financialmodelingprep.com/api/v3/stock_market/gainers?apikey=${API_KEY}`,
+    );
+    const data = await resp.json();
+    console.log(data);
+    return data;
 
-    if (state.mission.missionData.length === 0) {
-      const resp = await fetch('https://api.spacexdata.com/v3/missions');
-      const data = resp.json();
-      return data;
-    }
+    // const state = thunkAPI.getState();
 
-    return state.mission.missionData;
+    // if (state.mission.missionData.length === 0) {
+    //   const resp = await fetch(
+    //     `https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=${API_KEY}`,
+    //   );
+    //   const data = resp.json();
+    //   console.log(data);
+    //   return data;
+    // }
+
+    // return state.mission.missionData;
   },
 );
 
 const initialState = {
-  missionData: [],
-  isLoading: true, // Indicator to track if the search is in progress
-  error: null, // Store any errors
-  joinedMissions: [],
+  companies: [],
+  filteredCompanies: [],
+  companyDetail: [],
+  statement: [],
+  isLoading: false,
+  error: '',
 };
 
-const missionSlice = createSlice({
-  name: 'mission',
+const companiesSlice = createSlice({
+  name: 'companies',
   initialState,
-  reducers: {
-    joinMission: (state, action) => {
-      const missionId = action.payload;
-
-      const updatMission = state.missionData.map((mission) => (mission.mission_id === missionId
-        ? { ...mission, reserved: true }
-        : mission));
-
-      return {
-        ...state,
-        missionData: updatMission,
-        joinedMissions: [...state.joinedMissions, missionId],
-      };
-    },
-    leaveMission: (state, action) => {
-      const missionId = action.payload;
-      const index = state.joinedMissions.indexOf(missionId);
-      if (index !== -1) {
-        state.joinedMissions.splice(index, 1);
-      }
-
-      const updatedMiss = state.missionData.map((mission) => {
-        if (mission.mission_id === missionId) {
-          return { ...mission, reserved: !mission.reserved };
-        }
-        return mission;
-      });
-
-      // I've everything i could, but this is the only way,
-      // kindly ignore this disabled
-      // eslint-disable-next-line
-      state.missionData = updatedMiss;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getMissions.pending, (state) => ({
+      .addCase(getCompanies.pending, (state) => ({
         ...state,
         isLoading: true,
         error: null,
       }))
-      .addCase(getMissions.fulfilled, (state, action) => ({
+      .addCase(getCompanies.fulfilled, (state, action) => ({
         ...state,
         isLoading: false,
-        missionData: action.payload,
+        companies: action.payload,
       }))
-      .addCase(getMissions.rejected, (state, action) => ({
+      .addCase(getCompanies.rejected, (state, action) => ({
         ...state,
         isLoading: false,
         error: action.error.message,
@@ -81,6 +61,5 @@ const missionSlice = createSlice({
   },
 });
 
-export const { joinMission, leaveMission } = missionSlice.actions;
-export const selectMission = (state) => state.mission;
-export default missionSlice.reducer;
+export const selectCompanies = (state) => state.companies;
+export default companiesSlice.reducer;

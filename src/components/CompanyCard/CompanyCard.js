@@ -1,84 +1,66 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
-import {
-  joinMission,
-  leaveMission,
-  selectMission,
-} from '../../redux/Company/CompanySlice';
+import { BsArrowRightCircle, BsGraphUpArrow } from 'react-icons/bs';
 import './CompanyCard.css';
+import { Link } from 'react-router-dom';
+import { selectCompanies } from '../../redux/Company/CompanySlice';
 
 function CompanyCard() {
-  const dispatch = useDispatch();
-  const { missionData, isLoading } = useSelector(selectMission);
-
-  const handleToggleMission = (missionId, reserved) => {
-    if (reserved) {
-      dispatch(leaveMission(missionId));
-    } else {
-      dispatch(joinMission(missionId));
-    }
-  };
+  // const dispatch = useDispatch();
+  const { companies, isLoading, error } = useSelector(selectCompanies);
+  console.log(companies);
 
   if (isLoading) {
     return <Spinner />;
   }
 
-  return (
-    <div>
-      <main className="card companyCard d-flex flex-column">
-        <header className="col-12">
-          <div className="col-2">
-            <h3> Mission</h3>
-          </div>
-          <div className="col-6">
-            <h3>Description</h3>
-          </div>
-          <div className="col-2">
-            <h3>Status</h3>
-          </div>
-        </header>
+  if (error) {
+    return (
+      <div>
+        {' '}
+        <p> Opps..., There&apos;s a problem</p>
+        {' '}
+      </div>
+    );
+  }
 
-        {missionData.map((mission, idx) => (
-          <section
-            key={mission.mission_id}
-            className={
-              idx % 2 === 0
-                ? 'col-12 d-flex dark flex-row border'
-                : 'col-12 d-flex white flex-row border'
-            }
-          >
-            <div className="col-2">
-              <h3>
-                {' '}
-                {mission.mission_name}
-                {' '}
-              </h3>
-            </div>
-            <div className="col-6">
-              <p>{mission.description}</p>
-            </div>
-            <div className="col-2 d-flex justify-content-center align-items-center">
-              <button
-                className={mission.reserved ? 'activeMember' : 'notMember'}
-                type="button"
-              >
-                {mission.reserved ? 'active member' : 'not a member'}
-              </button>
-            </div>
-            <div className="col-2 d-flex justify-content-center align-items-center">
-              <button
-                onClick={() => handleToggleMission(mission.mission_id, mission.reserved)}
-                className={mission.reserved ? 'leave col-10' : 'join col-10'}
-                type="button"
-              >
-                {mission.reserved ? 'Leave Mission' : 'Join Mission'}
-              </button>
-            </div>
-          </section>
-        ))}
-      </main>
-    </div>
+  return (
+    <main className="cardWrapper">
+      {companies.map(({ name, symbol, price }) => (
+        <ul key={symbol} className="companyCard">
+          <li className="">
+            <Link
+              to={`company/${symbol}`}
+              className="d-flex flex-column justify-content-between align-items-end col-12"
+            >
+              <BsArrowRightCircle color="var(--secColor)" />
+              {' '}
+              <div className="d-flex align-items-start col-12 my-4">
+                <BsGraphUpArrow className="icon" />
+              </div>
+              <div className="d-flex flex-column justify-content-between align-items-end col-12 text-end">
+                <h2>{name}</h2>
+                <div className="d-flex justify-content-between col-10 ">
+                  <span className="">
+                    {' '}
+                    Symbol:
+                    <strong>{symbol}</strong>
+                  </span>
+
+                  <span className="">
+                    {' '}
+                    Price:
+                    <strong>{`$ ${price}`}</strong>
+                  </span>
+                </div>
+              </div>
+            </Link>
+          </li>
+          {' '}
+        </ul>
+      ))}
+    </main>
   );
 }
 

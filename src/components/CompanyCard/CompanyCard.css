@@ -1,49 +1,36 @@
+.cardWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.6em;
+}
+
+.companyCard {
+  padding: 1em 1.5em;
+  border: solid 1px var(--secColor);
+  border-radius: 5px;
+  color: var(--white);
+}
+
+.companyCard .icon {
+  font-size: 6rem;
+  color: color-mix(in sRGB, transparent 95%, var(--secColor) 100%);
+  font-weight: 900;
+}
+
+.companyCard span {
+  margin-top: 1em;
+  color: var(--secColor);
+}
+
+strong {
+  color: var(--white);
+  margin-left: 0.5em;
+}
+
 .companyCard h3 {
   font-size: 1rem;
 }
 
 .companyCard p {
   font-size: 0.8rem;
-}
-
-.companyCard div {
-  border-right: solid 1px #dee2e6;
-  padding: 0.8em 0.5em;
-}
-
-button {
-  border: none !important;
-}
-
-.dark {
-  background-color: #f2f2f2;
-}
-
-.white {
-  background-color: #fff;
-}
-
-.join {
-  background: transparent;
-  border: solid 1px #6d757d !important;
-  color: #6d757d;
-}
-
-.leave {
-  background: transparent;
-  border: solid 1px #f00 !important;
-  color: #f00;
-}
-
-.notMember {
-  background: #6d757d;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.activeMember {
-  background-color: #25a2b7;
-  color: #fff;
-  font-weight: 700;
 }
