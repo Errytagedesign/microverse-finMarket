@@ -20,6 +20,18 @@ export const getCompanies = createAsyncThunk(
   },
 );
 
+export const getCompanyDetails = createAsyncThunk(
+  'company/getCompanies',
+  async (symbol) => {
+    const resp = await fetch(
+      `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${API_KEY}`,
+    );
+    console.log(resp);
+    const data = resp.json();
+    return data;
+  },
+);
+
 const initialState = {
   topGainers: [],
   filteredCompanies: [],
@@ -46,6 +58,21 @@ const companiesSlice = createSlice({
         topGainers: action.payload,
       }))
       .addCase(getCompanies.rejected, (state, action) => ({
+        ...state,
+        isLoading: false,
+        error: action.error.message,
+      }))
+      .addCase(getCompanyDetails.pending, (state) => ({
+        ...state,
+        isLoading: true,
+        error: null,
+      }))
+      .addCase(getCompanyDetails.fulfilled, (state, action) => ({
+        ...state,
+        isLoading: false,
+        companyDetail: action.payload,
+      }))
+      .addCase(getCompanyDetails.rejected, (state, action) => ({
         ...state,
         isLoading: false,
         error: action.error.message,
