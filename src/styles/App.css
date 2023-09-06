@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header > div {
+  display: flex;
+}
+
+ul {
+  display: flex;
+  gap: 3rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+  color: blue;
+  font-size: 18px;
+}
+
+.rocketContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 5px 0;
+  padding-top: 20px;
+}
+
+.Space {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-family: sans-serif;
+}
+
+.img {
+  flex: 1;
+}
+
+.img img {
+  width: 100%;
+}
+
+.details {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.details p {
+  padding-right: 5px;
+}
