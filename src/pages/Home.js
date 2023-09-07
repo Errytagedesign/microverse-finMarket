@@ -3,7 +3,7 @@ import CompanyCard from '../components/CompanyCard/CompanyCard';
 
 function Home() {
   return (
-    <div className="container">
+    <div className="">
       <CompanyCard />
     </div>
   );

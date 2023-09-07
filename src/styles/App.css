@@ -66,6 +66,15 @@ h2 {
   font-weight: 700;
 }
 
+@media (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: 1rem;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+}
+
 p {
   font-size: 1rem;
   font-weight: 300;
@@ -100,4 +109,28 @@ small {
 .odd h3,
 .even h3 {
   font-size: 1rem;
+}
+
+input {
+  background: color-mix(in sRGB, transparent 80%, var(--secColor) 10%);
+  border-color: transparent;
+  padding: 1em 3em;
+  width: 100%;
+  color: var(--white);
+  text-align: center;
+}
+
+input::placeholder {
+  color: var(--secColor);
+  text-align: center;
+}
+
+.search {
+  position: absolute;
+  left: 5%;
+}
+
+footer,
+header {
+  background: color-mix(in sRGB, transparent 60%, var(--secColor) 40%);
 }

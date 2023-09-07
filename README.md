@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-  <h3><b>Book Store Projects</b></h3>
+  <h3><b> Financial Market Capstone project</b></h3>
 
 # 📗 Table of Contents
 
@@ -23,9 +23,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 A Book Store project create with React <a name="about-project"></a>
+# 📖 Financial Market Capstone project <a name="about-project"></a>
 
-A Book Store project developed with React, gitflow, and githubflow. In addition, i added Linters for Css and Javascript.
+Financial Market Capstone project developed with React, gitflow, and githubflow. In addition, i added Linters for Css and Javascript.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -49,7 +49,11 @@ A Book Store project developed with React, gitflow, and githubflow. In addition,
 ### Key Features <a name="key-features"></a>
 
 - Initial setup with CRA.
+- Add Redux-toolkits.
+- Fetch data from APIs.
+- Render Data.
 - Add Linters.
+- Add Unit testing
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,7 +83,7 @@ Run this Command:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Errytagedesign/bookStore
+  git clone https://github.com/Errytagedesign/microverse-finMarket
 ```
 
 ### Install
@@ -88,7 +92,7 @@ First you need to install the node package files
 Run this command:
 
 ```sh
-  cd bookStore
+  cd microverse-finMarket
   npm install
 ```
 
@@ -139,8 +143,7 @@ I have added the linters or tests in order to avoid anykind of typos and ensure 
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] Add comments functionality
-- [ ] Update category page
+- [ ] Add different category like gainers, looser, annual report quarter report etc
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,6 +170,9 @@ If you like this project just give it a star -
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank Microverse.
+
+- This project was based on the design by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) in [Behance](<https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)>).
+- The design is licensed under the [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

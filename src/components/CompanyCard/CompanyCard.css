@@ -1,13 +1,10 @@
 .cardWrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 0.6em;
 }
 
 .companyCard {
   padding: 1em 1.5em;
-  border: solid 1px var(--secColor);
-  border-radius: 5px;
   color: var(--white);
 }
 
@@ -33,4 +30,47 @@ strong {
 
 .companyCard p {
   font-size: 0.8rem;
+}
+
+.topGainers {
+  padding: 4em 1em;
+}
+
+.topGainers .icon {
+  color: color-mix(in sRGB, transparent 95%, var(--secColor) 100%);
+}
+
+.topGainers h2 {
+  font-size: 2rem;
+}
+
+.topGainers h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: color-mix(in sRGB, transparent 95%, var(--secColor) 100%);
+}
+
+@media (max-width: 768px) {
+  .cardWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .companyCard .icon {
+    font-size: 4rem;
+    color: color-mix(in sRGB, transparent 95%, var(--secColor) 100%);
+    font-weight: 900;
+  }
+
+  .companyCard h2 {
+    font-size: 1rem;
+  }
+
+  .companyCard {
+    padding: 1em 0.5em;
+    color: var(--white);
+  }
+
+  .companyCard span {
+    font-size: 0.6rem;
+  }
 }

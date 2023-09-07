@@ -7,7 +7,6 @@ export const getCompanies = createAsyncThunk(
   'company/getCompanies',
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-
     if (state.companies.topGainers.length === 0) {
       const resp = await fetch(
         `https://financialmodelingprep.com/api/v3/stock_market/actives?apikey=${API_KEY}`,
@@ -27,7 +26,6 @@ export const getCompanyDetails = createAsyncThunk(
       `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${API_KEY}`,
     );
     const data = await resp.json();
-    console.log(data);
     return data;
   },
 );
@@ -35,6 +33,7 @@ export const getCompanyDetails = createAsyncThunk(
 const initialState = {
   topGainers: [],
   companyDetail: {},
+  isSearchParam: '',
   isLoading: false,
   error: null,
 };
@@ -42,7 +41,11 @@ const initialState = {
 const companiesSlice = createSlice({
   name: 'companies',
   initialState,
-  reducers: {},
+  reducers: {
+    updateSearchParam: (state, action) => {
+      state.isSearchParam = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getCompanies.pending, (state) => {
@@ -64,5 +67,6 @@ const companiesSlice = createSlice({
   },
 });
 
+export const { updateSearchParam } = companiesSlice.actions;
 export const selectCompanies = (state) => state.companies;
 export default companiesSlice.reducer;
