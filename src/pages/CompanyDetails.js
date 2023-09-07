@@ -76,7 +76,7 @@ function CompanyDetails() {
                 </div>
                 <div className="even">
                   <p>Actively Trading:</p>
-                  <h3>{isActivelyTrading}</h3>
+                  <h3>{isActivelyTrading ? 'Yes' : 'No'}</h3>
                 </div>
                 <div className="odd">
                   <p> Price: </p>
