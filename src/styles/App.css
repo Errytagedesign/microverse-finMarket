@@ -1,0 +1,136 @@
+:root {
+  --secColor: #6500ff;
+  --mainColor: #25015b;
+  --white: #fff;
+  --black: #515151;
+  --Grey2: #565c69;
+  --Grey4: #f4f5f8;
+  --positive: #20af0b;
+  --negative: #ff3b2d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background: var(--mainColor);
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+img {
+  width: 100%;
+}
+
+hr {
+  background: var(--secColor);
+}
+
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: 1rem;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+small {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.odd {
+  background: color-mix(in sRGB, transparent 80%, var(--secColor) 20%);
+}
+
+.even {
+  background: color-mix(in sRGB, transparent 80%, var(--secColor) 10%);
+}
+
+.odd,
+.even {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em 1.1em;
+}
+
+.odd p,
+.even p {
+  color: var(--secColor);
+}
+
+.odd h3,
+.even h3 {
+  font-size: 1rem;
+}
+
+input {
+  background: color-mix(in sRGB, transparent 80%, var(--secColor) 10%);
+  border-color: transparent;
+  padding: 1em 3em;
+  width: 100%;
+  color: var(--white);
+  text-align: center;
+}
+
+input::placeholder {
+  color: var(--secColor);
+  text-align: center;
+}
+
+.search {
+  position: absolute;
+  left: 5%;
+}
+
+footer,
+header {
+  background: color-mix(in sRGB, transparent 60%, var(--secColor) 40%);
+}

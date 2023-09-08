@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CompanyDetails Component renders company details correctly 1`] = `
+<div>
+  <main
+    class=""
+  >
+    <header
+      class="d-flex "
+    >
+      <section
+        class="py-5 d-flex flex-row justify-content-between align-items-center container"
+      >
+        <a
+          href="/"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"
+            />
+          </svg>
+        </a>
+        <h1>
+          Apple
+        </h1>
+        <div>
+           
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 16 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"
+            />
+            <path
+              d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"
+            />
+          </svg>
+           
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.488.488 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
+            />
+          </svg>
+           
+        </div>
+      </section>
+    </header>
+    <section
+      class="d-flex flex-column flex-md-row justify-content-between"
+    >
+      <div
+        class="odd col-12 col-md-4"
+      >
+        <figure
+          class=" col-12"
+        >
+          <img
+            alt="Apple"
+            src="https://apple.com/images"
+          />
+        </figure>
+      </div>
+      <section
+        class="col-12 col-md-7"
+      >
+        <div
+          class="even"
+        >
+          <p>
+             CEO:
+          </p>
+          <h3>
+            Cook
+          </h3>
+        </div>
+        <div
+          class="odd d-flex flex-column"
+        >
+          <p>
+             company description:
+          </p>
+          <small>
+            About apple products
+          </small>
+        </div>
+        <div
+          class="even"
+        >
+          <p>
+             Currency:
+          </p>
+          <h3>
+            USD
+          </h3>
+        </div>
+        <div
+          class="odd"
+        >
+          <p>
+            Exchange Name: 
+          </p>
+          <h3>
+            NASDAQ
+          </h3>
+        </div>
+        <div
+          class="even"
+        >
+          <p>
+            Actively Trading:
+          </p>
+          <h3>
+            Yes
+          </h3>
+        </div>
+        <div
+          class="odd"
+        >
+          <p>
+             Price: 
+          </p>
+          <h3>
+            $2.5
+          </h3>
+        </div>
+        <div
+          class="even"
+        >
+          <p>
+             Market Cap:
+          </p>
+          <h3>
+            $120,979,678,899.00
+          </h3>
+        </div>
+        <div
+          class="odd"
+        >
+          <p>
+             Industry:
+          </p>
+          <h3>
+            Software Engineer
+          </h3>
+        </div>
+        <div
+          class="even"
+        >
+          <p>
+             Sector:
+          </p>
+          <h3>
+            Tech
+          </h3>
+        </div>
+        <div
+          class="odd"
+        >
+          <p>
+             Website:
+          </p>
+          <a
+            class="btn btn-primary"
+            href="https://apple.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Visit Our Website
+          </a>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+`;
