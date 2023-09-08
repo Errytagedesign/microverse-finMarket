@@ -32,6 +32,9 @@ exports[`CompanyDetails Component renders company details correctly 1`] = `
             />
           </svg>
         </a>
+        <h1>
+          Apple
+        </h1>
         <div>
            
           <svg
@@ -72,9 +75,131 @@ exports[`CompanyDetails Component renders company details correctly 1`] = `
         </div>
       </section>
     </header>
-    <div
-      class="spinner-border"
-    />
+    <section
+      class="d-flex flex-column flex-md-row justify-content-between"
+    >
+      <div
+        class="odd col-12 col-md-4"
+      >
+        <figure
+          class=" col-12"
+        >
+          <img
+            alt="Apple"
+            src="https://apple.com/images"
+          />
+        </figure>
+      </div>
+      <section
+        class="col-12 col-md-7"
+      >
+        <div
+          class="even"
+        >
+          <p>
+             CEO:
+          </p>
+          <h3>
+            Cook
+          </h3>
+        </div>
+        <div
+          class="odd d-flex flex-column"
+        >
+          <p>
+             company description:
+          </p>
+          <small>
+            About apple products
+          </small>
+        </div>
+        <div
+          class="even"
+        >
+          <p>
+             Currency:
+          </p>
+          <h3>
+            USD
+          </h3>
+        </div>
+        <div
+          class="odd"
+        >
+          <p>
+            Exchange Name: 
+          </p>
+          <h3>
+            NASDAQ
+          </h3>
+        </div>
+        <div
+          class="even"
+        >
+          <p>
+            Actively Trading:
+          </p>
+          <h3>
+            Yes
+          </h3>
+        </div>
+        <div
+          class="odd"
+        >
+          <p>
+             Price: 
+          </p>
+          <h3>
+            $2.5
+          </h3>
+        </div>
+        <div
+          class="even"
+        >
+          <p>
+             Market Cap:
+          </p>
+          <h3>
+            $120,979,678,899.00
+          </h3>
+        </div>
+        <div
+          class="odd"
+        >
+          <p>
+             Industry:
+          </p>
+          <h3>
+            Software Engineer
+          </h3>
+        </div>
+        <div
+          class="even"
+        >
+          <p>
+             Sector:
+          </p>
+          <h3>
+            Tech
+          </h3>
+        </div>
+        <div
+          class="odd"
+        >
+          <p>
+             Website:
+          </p>
+          <a
+            class="btn btn-primary"
+            href="https://apple.com"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Visit Our Website
+          </a>
+        </div>
+      </section>
+    </section>
   </main>
 </div>
 `;

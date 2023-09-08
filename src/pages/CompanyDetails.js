@@ -96,12 +96,15 @@ function CompanyDetails() {
                 </div>
                 <div className="odd">
                   <p> Website:</p>
-                  <button type="button" className="btn btn-primary">
-                    {' '}
-                    <a href={website} target="_blank" rel="noreferrer">
-                      Visit Our Website
-                    </a>
-                  </button>
+
+                  <a
+                    className="btn btn-primary"
+                    href={website}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Visit Our Website
+                  </a>
                 </div>
               </section>
             </section>
